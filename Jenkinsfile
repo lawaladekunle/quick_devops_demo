@@ -20,11 +20,14 @@ docker build -t thedemo-flaskapp:v${image_version} .
 '''
       }
     }
-    stage('Test') {
+    stage('Push Image') {
       steps {
-          script {
-echo  "The current image version is: ${image_version}"
-        }
+          withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'DockerHubPassword')]) {
+sh -c "docker login -u lawaladekunle -p ${DockerHubPassword}"
+}
+
+sh -c "docker push thedemo-flaskapp:v${image_version}"
+
       }
 
     }
