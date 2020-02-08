@@ -1,4 +1,4 @@
-def VERSION
+def image_version
 
 pipeline {
   agent {
@@ -13,9 +13,9 @@ pipeline {
         sh '''#!/bin/bash
 
 # Specify the version number for the image
-VERSION=1
+image_version=1.0
 
-docker build -t thedemo-flaskapp:v${VERSION} .
+docker build -t thedemo-flaskapp:v${image_version} .
 
 '''
       }
@@ -23,7 +23,7 @@ docker build -t thedemo-flaskapp:v${VERSION} .
     stage('Upload Image') {
       steps {
 	withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'https://index.docker.io/v2/') {
-        echo ${VERSION}
+        echo ${image_version}
 
 	docker login
         
