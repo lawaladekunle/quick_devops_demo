@@ -11,7 +11,7 @@ pipeline {
         sh '''#!/bin/bash
 
 # Specify the version number for the image
-VERSION=1.0
+VERSION=1
 
 docker build -t thedemo-flaskapp:v${VERSION} .
 
@@ -23,7 +23,7 @@ docker build -t thedemo-flaskapp:v${VERSION} .
 withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'hub.docker.com') {
         docker login
 
-        docker push thedemo-flaskapp:v${VERSION}
+        docker push thedemo-flaskapp:v1
         }
       }
 
