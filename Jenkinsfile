@@ -29,9 +29,10 @@ docker build -t thedemo-flaskapp:v${IMAGE_VERSION} .
   }
       script {
       IMAGE_VERSION="1.0"
+
+      sh "docker push thedemo-flaskapp:v${IMAGE_VERSION}"
+      
       }
-    
-    sh "docker push thedemo-flaskapp:v${IMAGE_VERSION}"
 
       }
 
