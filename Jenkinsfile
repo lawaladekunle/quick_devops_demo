@@ -40,7 +40,7 @@ image_version=1.0
 
 docker login 
 
-docker push thedemo-flaskapp:v${image_version}
+/bin/bash -c docker push thedemo-flaskapp:v${image_version}
 
 '''
 	    
