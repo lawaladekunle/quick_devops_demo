@@ -13,11 +13,20 @@ pipeline {
 # Specify the version number for the image
 VERSION=1.0
 
-docker build -t my_flask:v${VERSION} .
+docker build -t thedemo-flaskapp:v${VERSION} .
 
 '''
       }
     }
+    stage('Upload Image') {
+      steps   {
+withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'hub.docker.com') {
+        docker login
 
+        docker push:v${VERSION}
+        }
+      }
+
+    }
   }
 }
