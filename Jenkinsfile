@@ -23,7 +23,7 @@ docker build -t thedemo-flaskapp:v${VERSION} .
 withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'hub.docker.com') {
         docker login
 
-        docker push thedemo-flaskap:v${VERSION}
+        docker push thedemo-flaskapp:v${VERSION}
         }
       }
 
