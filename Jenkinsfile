@@ -38,7 +38,7 @@ echo  "The current image version is: ${image_version}"
 # Specify the version number for the image
 image_version=1.0
 
-docker image ls
+docker login 
 
 docker push thedemo-flaskapp:v${image_version}
 
