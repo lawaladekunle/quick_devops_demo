@@ -28,7 +28,14 @@ docker build -t lawaladekunle/thedemo-flaskapp:v${IMAGE_VERSION} .
 
   }
 
-    sh "docker push lawaladekunle/thedemo-flaskapp:v1.0"
+    script {
+      
+      IMAGE_VERSION="1.0"
+
+      sh "docker push lawaladekunle/thedemo-flaskapp:v${IMAGE_VERSION}"
+      
+      }
+    
 
       }
 
