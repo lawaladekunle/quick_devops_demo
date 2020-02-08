@@ -23,8 +23,7 @@ docker build -t thedemo-flaskapp:v${image_version} .
     stage('Test') {
       steps {
           script {
-             image_version=1.0
-             echo  "The image version is : ${image_version}"
+             echo  "${image_version}"
         }
       }
 
