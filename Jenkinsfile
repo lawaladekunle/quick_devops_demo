@@ -35,7 +35,7 @@ docker build -t thedemo-flaskapp:v${image_version} .
 
 	image_version=1.0
 	
-	docker push thedemo-flaskapp:v${image_version}
+	docker push "thedemo-flaskapp:v${image_version}"
         
         }
       }
