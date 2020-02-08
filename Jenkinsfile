@@ -41,6 +41,8 @@ echo  "The current image version is: ${image_version}"
     stage('Upload Image') {
       steps {
 
+docker image ls
+
 docker push "thedemo-flaskapp:v1.0"
 
       }
