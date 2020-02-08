@@ -23,7 +23,7 @@ docker build -t thedemo-flaskapp:v${image_version} .
     stage('Test') {
       steps {
           script {
-             echo  "${image_version}"
+             echo  "The current image version is: ${image_version}"
         }
       }
 
@@ -32,7 +32,6 @@ docker build -t thedemo-flaskapp:v${image_version} .
     stage('Upload Image') {
       steps {
 	withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'https://index.docker.io/v2/') {
-        echo ${image_version}
 
 	docker login
         
