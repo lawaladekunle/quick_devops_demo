@@ -41,6 +41,12 @@ docker build -t lawaladekunle/thedemo-flaskapp:v${IMAGE_VERSION} .
 
     }
 
+    stage('Deploy to Kubernetes') {
+
+      sh -c kubectl version
+
+    }
+
   }
 
 }
