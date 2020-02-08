@@ -25,7 +25,7 @@ docker build -t thedemo-flaskapp:v${VERSION} .
 
 	docker login
         
-	docker push thedemo-flaskapp:v1
+	docker push thedemo-flaskappv1
         }
       }
 
