@@ -29,15 +29,21 @@ echo  "The current image version is: ${image_version}"
 
     }
   
-    stage('Upload Image') {
+    stage('Login') {
       steps {
 	withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'https://index.docker.io/v2/') {
-	
-docker push "thedemo-flaskapp:v1.0"
-        
+	    
         }
       }
 
+    }
+
+    stage('Upload Image') {
+      steps {
+
+docker push "thedemo-flaskapp:v1.0
+
+      }
     }
   }
 }
