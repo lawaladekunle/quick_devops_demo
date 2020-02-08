@@ -10,10 +10,12 @@ pipeline {
       steps {
         sh '''#!/bin/bash
 
+echo $(whoami)
+
 # Specify the version number for the image
 VERSION=1.0
 
-docker build -t my_flask:v${VERSION} .
+sudo docker build -t my_flask:v${VERSION} .
 
 '''
       }
