@@ -31,15 +31,15 @@ echo  "The current image version is: ${image_version}"
   
     stage('Login') {
       steps {
-	withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'https://index.docker.io/v2/') {
+	withDockerRegistry([usernamePassword( credentialsId: 'DOCKER_LOGIN_PASSWD', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD') url: 'https://index.docker.io/v2/']) {
 
  sh '''#!/bin/bash
 
 # Specify the version number for the image
 image_version=1.0
 
-#docker push thedemo-flaskapp:v${image_version}
-docker push thedemo-flaskapp:v1.0
+docker login -u "${USERNAME}" -p "${PASSWORD}"
+docker push thedemo-flaskapp:v${image_version}
 
 '''
 	    
