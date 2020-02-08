@@ -33,7 +33,9 @@ docker build -t thedemo-flaskapp:v${image_version} .
       steps {
 	withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'https://index.docker.io/v2/') {
 
-	docker login
+	image_version=1.0
+	
+	docker push thedemo-flaskapp:v${image_version}
         
         }
       }
