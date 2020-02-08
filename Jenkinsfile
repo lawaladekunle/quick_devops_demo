@@ -28,15 +28,6 @@ echo  "The current image version is: ${image_version}"
       }
 
     }
-  
-    stage('Login') {
-      steps {
-withDockerRegistry('https://index.docker.io/v2/', credentialsId: 'DOCKER_LOGIN_PASSWD') {
-	    
-        }
-      }
-
-    }
 
   }
 
