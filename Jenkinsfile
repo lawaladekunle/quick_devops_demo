@@ -15,7 +15,7 @@ pipeline {
 # Specify the version number for the image
 IMAGE_VERSION='1.0'
 
-docker build -t thedemo-flaskapp:v${IMAGE_VERSION} .
+docker build -t lawaladekunle/thedemo-flaskapp:v${IMAGE_VERSION} .
 
 '''
       }
