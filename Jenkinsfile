@@ -27,9 +27,10 @@ docker build -t thedemo-flaskapp:v${IMAGE_VERSION} .
     sh "docker login -u lawaladekunle -p ${DockerHubPassword}"
 
   }
-
-    IMAGE_VERSION="1.0"
-
+      script {
+      IMAGE_VERSION="1.0"
+      }
+    
     sh "docker push thedemo-flaskapp:v${IMAGE_VERSION}"
 
       }
