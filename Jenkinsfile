@@ -13,7 +13,7 @@ pipeline {
         sh '''#!/bin/bash
 
 # Specify the version number for the image
-image_version=1.0
+image_version='1.0'
 
 docker build -t thedemo-flaskapp:v${image_version} .
 
@@ -27,6 +27,8 @@ docker build -t thedemo-flaskapp:v${image_version} .
     sh "docker login -u lawaladekunle -p ${DockerHubPassword}"
 
   }
+
+    image_version = "1.0"
 
     sh "docker push thedemo-flaskapp:v${image_version}"
 
