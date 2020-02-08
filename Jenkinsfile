@@ -31,7 +31,7 @@ echo  "The current image version is: ${image_version}"
   
     stage('Login') {
       steps {
-	withDockerRegistry([usernamePassword( credentialsId: 'DOCKER_LOGIN_PASSWD', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')], url: 'https://index.docker.io/v2/') {
+	withDockerRegistry('https://index.docker.io/v2/' [ , usernamePassword( credentialsId: 'DOCKER_LOGIN_PASSWD', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 
  sh '''#!/bin/bash
 
