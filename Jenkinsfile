@@ -1,4 +1,3 @@
-# Declaring global variables
 def VERSION
 
 pipeline {
