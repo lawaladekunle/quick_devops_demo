@@ -33,7 +33,7 @@ echo  "The current image version is: ${image_version}"
       steps {
 docker.withDockerRegistry('https://index.docker.io/v2/', credentialsId: 'DOCKER_LOGIN_PASSWD') {
 
-docker.push(thedemo-flaskapp:v${image_version})
+docker.push("thedemo-flaskapp:v${image_version}")
 	    
         }
       }
