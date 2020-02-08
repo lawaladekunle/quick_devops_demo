@@ -1,4 +1,4 @@
-def image_version
+def IMAGE_VERSION
 
 pipeline {
   agent {
@@ -13,9 +13,9 @@ pipeline {
         sh '''#!/bin/bash
 
 # Specify the version number for the image
-image_version='1.0'
+IMAGE_VERSION='1.0'
 
-docker build -t thedemo-flaskapp:v${image_version} .
+docker build -t thedemo-flaskapp:v${IMAGE_VERSION} .
 
 '''
       }
@@ -28,9 +28,9 @@ docker build -t thedemo-flaskapp:v${image_version} .
 
   }
 
-    sh export image_version='1.0'
+    IMAGE_VERSION="1.0"
 
-    sh "docker push thedemo-flaskapp:v${image_version}"
+    sh "docker push thedemo-flaskapp:v${IMAGE_VERSION}"
 
       }
 
