@@ -23,10 +23,12 @@ docker build -t thedemo-flaskapp:v${image_version} .
     stage('Push Image') {
       steps {
           withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'DockerHubPassword')]) {
-sh -c "docker login -u lawaladekunle -p ${DockerHubPassword}"
-}
 
-sh -c "docker push thedemo-flaskapp:v${image_version}"
+    sh "docker login -u lawaladekunle -p ${DockerHubPassword}"
+
+  }
+
+    sh "docker push thedemo-flaskapp:v${image_version}"
 
       }
 
