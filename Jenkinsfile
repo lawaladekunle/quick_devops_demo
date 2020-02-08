@@ -1,3 +1,6 @@
+# Declaring global variables
+def VERSION
+
 pipeline {
   agent {
     node {
