@@ -19,10 +19,12 @@ docker build -t thedemo-flaskapp:v${VERSION} .
       }
     }
     stage('Upload Image') {
-      steps   {
-withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'hub.docker.com') {
-        docker login
+      steps {
+	withDockerRegistry(credentialsId: 'DOCKER_LOGIN_PASSWD', url: 'https://hub.docker.com') {
+        echo $VERSION
 
+	docker login
+        
         docker push thedemo-flaskapp:v1
         }
       }
