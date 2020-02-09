@@ -46,6 +46,7 @@ docker build -t lawaladekunle/thedemo-flaskapp:v${IMAGE_VERSION} .
       steps {
 
           sh "kubectl version --client=true"
+          
 
       }
 
